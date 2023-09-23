@@ -5,6 +5,7 @@ import { CreateGameSchema } from "../schema/CreateGame.schema.ts";
 import { useEffect } from "react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { getApp } from "firebase/app";
+import { customAlphabet } from "nanoid";
 
 export const useCreateGame = () => {
   const { name, setName } = useStore();
@@ -30,7 +31,7 @@ export const useCreateGame = () => {
     const gamesRef = collection(getFirestore(getApp()), "games");
 
     await addDoc(gamesRef, {
-      id: "123",
+      id: customAlphabet("1234567890")(6),
       creator: data.name,
     });
   });
