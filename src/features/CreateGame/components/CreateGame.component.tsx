@@ -29,7 +29,6 @@ export const CreateGameComponent: FC = () => {
           </Button>
         </Grid>
       </Grid>
-      {/*<TextField placeholder={"Name"} variant={"outlined"} />*/}
     </Box>
   );
 };
